@@ -69,7 +69,7 @@ describe("DAO Proposal Testing Flow", function () {
         // propose, ProposalCreated(event) for propoalid (store the proposalid) - MyGovernor
             // Issue with parameters => calldata - Cert - data for propose - no func, just data
 
-        const transferCalldata = Proposal.interface.encodeFunctionData(101, "issue_proposal", ["Mint", "Token_User1"]);
+        const transferCalldata = Proposal.interface.encodeFunctionData( "issue_proposal", [101,"Mint", "Token_User1"]);
 
         proposeTx = await MyGovernor.propose(
             [Proposal.target],
